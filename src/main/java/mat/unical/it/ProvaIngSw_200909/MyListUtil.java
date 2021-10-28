@@ -55,11 +55,5 @@ public class MyListUtil {
 		
 		List<Integer> crescente = list.sort(numbers, 0);
 		List<Integer> decrescente = list.sort(numbers, 1);
-		
-		for (Integer i : crescente)
-			System.out.println(i);
-		
-		for (Integer i : decrescente)
-			System.out.println(i);
 	}
 }
