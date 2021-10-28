@@ -35,7 +35,6 @@ public class MyListUtilTest {
 		numbers.add(1);
 
 		assertEquals(Arrays.asList(1,2,3,5,6,8), sorted.sort(numbers, 0));
-
 	}
 	
 	@Test

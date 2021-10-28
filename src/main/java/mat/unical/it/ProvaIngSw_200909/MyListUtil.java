@@ -9,29 +9,30 @@ public class MyListUtil {
 	
 	public List<Integer> sort(List<Integer> list, int order) {
 		List<Integer> sortedNumbers = new ArrayList<Integer>();
+		List<Integer> temp = list;
 		int size = list.size();
 		switch (order) {
 		case 0:
 			for (int i = 0; i < size; i++) {
 				Integer min = Integer.MAX_VALUE;
-				for (int j = 0; j < list.size(); j++) {
-					if (list.get(j) < min)
-						min = list.get(j);
+				for (int j = 0; j < temp.size(); j++) {
+					if (temp.get(j) < min)
+						min = temp.get(j);
 				}
 				sortedNumbers.add(min);
-				list.remove(min);
+				temp.remove(min);
 			}
 				
 			break;
 		case 1:
 			for (int i = 0; i < size; i++) {
 				Integer max = Integer.MIN_VALUE;
-				for (int j = 0; j < list.size(); j++) {
-					if (list.get(j) > max)
-						max = list.get(j);
+				for (int j = 0; j < temp.size(); j++) {
+					if (temp.get(j) > max)
+						max = temp.get(j);
 				}
 				sortedNumbers.add(max);
-				list.remove(max);
+				temp.remove(max);
 			}
 			break;
 
@@ -43,6 +44,22 @@ public class MyListUtil {
 	}
 	
 	public static void main(String[] args) {
+		MyListUtil list = new MyListUtil();
+		List<Integer> numbers = new ArrayList<Integer>();
+		numbers.add(5);
+		numbers.add(3);
+		numbers.add(6);
+		numbers.add(8);
+		numbers.add(2);
+		numbers.add(1);
 		
+		List<Integer> crescente = list.sort(numbers, 0);
+		List<Integer> decrescente = list.sort(numbers, 1);
+		
+		for (Integer i : crescente)
+			System.out.println(i);
+		
+		for (Integer i : decrescente)
+			System.out.println(i);
 	}
 }
